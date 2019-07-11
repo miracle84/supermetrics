@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+use My\Kernel\CommandManager;
+
+define('PROJECT_DIR', __DIR__ . '/../');
+
+require_once PROJECT_DIR . 'src/Init.php';
+
+try {
+    $commandManager = new CommandManager($argv);
+    $commandManager->execute();
+} catch (Exception $e) {
+    echo $e->getMessage() . PHP_EOL;
+}
